@@ -2,14 +2,23 @@
 <html>
 <body>
 
-<h1 id="myH"></h1>
-<p id="myP"></p>
+<h1>JavaScript Variables</h1>
+
+<p>If you re-declare a JavaScript variable, it will not lose its value.</p>
+
+<p id="demo"></p>
 
 <script>
-// Change heading:
-document.getElementById("myH").innerHTML="Dejan";
-// Change paragraph:
-document.getElementById("myP").innerHTML = "Vukoicic.";
+  const person = {
+  firstName: "John",
+  lastName : "Doe",
+  id       : 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+document.getElementById("demo").innerHTML=person.fullName();
 </script>
 
 </body>
