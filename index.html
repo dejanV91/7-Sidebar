@@ -2,23 +2,28 @@
 <html>
 <body>
 
-<h1>JavaScript Variables</h1>
+<h2>JavaScript Array Sort</h2>
+<h3>The Fisher Yates Method</h3>
+<p>Click the button (again and again) to sort the array in random order.</p>
 
-<p>If you re-declare a JavaScript variable, it will not lose its value.</p>
-
+<button onclick="myFunction()">Try it</button>
 <p id="demo"></p>
 
 <script>
-  const person = {
-  firstName: "John",
-  lastName : "Doe",
-  id       : 5566,
-  fullName : function() {
-    return this.firstName + " " + this.lastName;
-  }
-};
+const points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;  
 
-document.getElementById("demo").innerHTML=person.fullName();
+function myFunction() {
+  for (let i = points.length -1; i > 0; i--) {
+    let j = Math.floor(Math.random() * i)
+    let k = points[i]
+   
+    points[i] = points[j]
+    console.log(points[i])
+    points[j] = k
+  }
+  document.getElementById("demo").innerHTML = points;
+}
 </script>
 
 </body>
